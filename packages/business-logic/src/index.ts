@@ -181,5 +181,8 @@ export function calculateCancellationFee(
 }
 
 export * from './sync-conflict-resolver';
+export * from './kpi-engine';
+export * from './channel-manager';
+
 
 

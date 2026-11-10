@@ -3,8 +3,10 @@
     "name": "Proffkit Exec",
     "slug": "proffkit-exec",
     "version": "1.0.0",
+    "scheme": "proffkit-exec",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "plugins": ["expo-router"],
     "platforms": ["ios", "android", "web"],
     "ios": {
       "supportsTablet": true,
@@ -14,8 +16,8 @@
       "package": "com.proffkit.exec"
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
     }
   }
 }
-

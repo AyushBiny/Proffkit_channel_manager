@@ -5,8 +5,8 @@
  */
 
 import React from 'react';
-import type { ReservationStatus, RoomStatus } from '@proffkit/db-types';
-import type { PricingQuote } from '@proffkit/business-logic';
+import type { ReservationStatus, RoomStatus, Room } from '@proffkit/db-types';
+import type { PricingQuote, HotelKpiMetrics } from '@proffkit/business-logic';
 
 export const THEME_COLORS = {
   primary: '#1E40AF', // Royal Blue
@@ -145,6 +145,99 @@ export function RoomStatusIndicator({ status }: { status: RoomStatus }): React.R
 }
 
 /**
+ * Executive KPI Metric Card
+ */
+export function KpiMetricCard({
+  title,
+  value,
+  subtitle,
+  trend,
+}: {
+  title: string;
+  value: string;
+  subtitle?: string;
+  trend?: { direction: 'UP' | 'DOWN' | 'NEUTRAL'; label: string };
+}): React.ReactElement {
+  const trendColor =
+    trend?.direction === 'UP'
+      ? THEME_COLORS.success
+      : trend?.direction === 'DOWN'
+      ? THEME_COLORS.danger
+      : THEME_COLORS.neutral;
+
+  return (
+    <div
+      style={{
+        backgroundColor: THEME_COLORS.surface,
+        borderRadius: '12px',
+        padding: '18px',
+        border: `1px solid ${THEME_COLORS.border}`,
+        boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+        minWidth: '180px',
+      }}
+    >
+      <span style={{ fontSize: '13px', color: THEME_COLORS.textSecondary, fontWeight: 500 }}>
+        {title}
+      </span>
+      <div style={{ fontSize: '24px', fontWeight: 700, color: THEME_COLORS.textPrimary, margin: '6px 0 2px 0' }}>
+        {value}
+      </div>
+      {(subtitle || trend) && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px' }}>
+          {trend && <span style={{ color: trendColor, fontWeight: 600 }}>{trend.label}</span>}
+          {subtitle && <span style={{ color: THEME_COLORS.textSecondary }}>{subtitle}</span>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Visual Room Matrix Grid Component
+ */
+export function RoomStatusGrid({
+  rooms,
+  onSelectRoom,
+}: {
+  rooms: Room[];
+  onSelectRoom?: (room: Room) => void;
+}): React.ReactElement {
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(90px, 1fr))',
+        gap: '10px',
+      }}
+    >
+      {rooms.map((room) => {
+        const style = ROOM_STATUS_STYLES[room.status] || ROOM_STATUS_STYLES.AVAILABLE;
+        return (
+          <div
+            key={room.id}
+            onClick={() => onSelectRoom?.(room)}
+            style={{
+              backgroundColor: style.bg,
+              color: style.text,
+              border: `1px solid ${style.text}40`,
+              borderRadius: '8px',
+              padding: '12px 6px',
+              textAlign: 'center',
+              cursor: onSelectRoom ? 'pointer' : 'default',
+              userSelect: 'none',
+              transition: 'transform 0.15s ease',
+            }}
+          >
+            <div style={{ fontSize: '15px', fontWeight: 700 }}>{room.roomNumber}</div>
+            <div style={{ fontSize: '10px', marginTop: '2px', fontWeight: 600 }}>{style.label}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
  * Universal Price Breakdown Card
  */
 export function PriceSummaryCard({ quote }: { quote: PricingQuote }): React.ReactElement {
@@ -222,4 +315,3 @@ export function PriceSummaryCard({ quote }: { quote: PricingQuote }): React.Reac
     </div>
   );
 }
-

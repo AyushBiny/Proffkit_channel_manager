@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Expo iOS/Android + Executive Web application for hotel managers & executives",
-  "main": "src/App.tsx",
+  "main": "expo-router/entry",
   "scripts": {
     "build": "tsc --noEmit",
     "dev": "expo start",
