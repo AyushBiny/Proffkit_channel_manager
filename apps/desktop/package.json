@@ -1,0 +1,20 @@
+{
+  "name": "@proffkit/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Electron (electron-vite) Reception PC desktop application for offline-capable hotel operations",
+  "main": "./dist/main/index.js",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "electron-vite dev",
+    "lint": "echo \"Linting @proffkit/desktop\"",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@proffkit/business-logic": "workspace:*",
+    "@proffkit/db-types": "workspace:*",
+    "@proffkit/shared-ui": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@proffkit/business-logic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proffkit core domain logic, pricing engine, booking rules, and validators",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "echo \"Linting @proffkit/business-logic\"",
+    "check-types": "tsc --noEmit",
+    "test": "echo \"Running tests for @proffkit/business-logic\""
+  },
+  "dependencies": {
+    "@proffkit/db-types": "workspace:*"
+  }
+}

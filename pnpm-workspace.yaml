@@ -1,0 +1,14 @@
+packages:
+  # Applications
+  # - apps/mobile: Expo iOS/Android + Exec Web
+  # - apps/desktop: Electron electron-vite Reception PC app
+  # - apps/website: Next.js multi-tenant hotel websites
+  # - apps/cloud-worker: 24/7 Node.js sync engine
+  - "apps/*"
+
+  # Shared Internal Packages
+  # - packages/db-types: Shared database models & TypeScript schemas
+  # - packages/shared-ui: Shared UI components
+  # - packages/business-logic: Core domain models, booking logic, and rules
+  - "packages/*"
+

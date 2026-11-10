@@ -1,0 +1,29 @@
+{
+  "name": "@proffkit/shared-ui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared UI components, design tokens, and display helpers for Proffkit",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
+  "exports": {
+    ".": {
+      "types": "./src/index.tsx",
+      "default": "./src/index.tsx"
+    }
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "echo \"Linting @proffkit/shared-ui\"",
+    "check-types": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12"
+  },
+  "dependencies": {
+    "@proffkit/business-logic": "workspace:*",
+    "@proffkit/db-types": "workspace:*"
+  }
+}

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Turbo
+.turbo
+
+# Build outputs
+dist
+out
+build
+.next
+!.next/cache
+.expo
+
+# Environment & Logs
+.env*.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+

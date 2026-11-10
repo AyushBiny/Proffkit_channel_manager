@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Proffkit Exec",
+    "slug": "proffkit-exec",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "platforms": ["ios", "android", "web"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.proffkit.exec"
+    },
+    "android": {
+      "package": "com.proffkit.exec"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
+

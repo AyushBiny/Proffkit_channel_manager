@@ -1,0 +1,19 @@
+{
+  "name": "@proffkit/db-types",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared database models & TypeScript schemas for Proffkit",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "echo \"Linting @proffkit/db-types\"",
+    "check-types": "tsc --noEmit"
+  }
+}
