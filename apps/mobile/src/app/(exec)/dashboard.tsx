@@ -53,3 +53,4 @@ export default function ExecDashboardPage(): React.ReactElement {
     </div>
   );
 }
+

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './global.css';
 import type { Reservation, RoomStatus } from '@proffkit/db-types';
 import { calculateReservationQuote } from '@proffkit/business-logic';
 import {

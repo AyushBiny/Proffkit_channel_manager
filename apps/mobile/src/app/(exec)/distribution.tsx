@@ -76,3 +76,4 @@ export default function DistributionPage(): React.ReactElement {
     </div>
   );
 }
+

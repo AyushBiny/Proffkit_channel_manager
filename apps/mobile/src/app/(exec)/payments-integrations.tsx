@@ -59,3 +59,4 @@ export default function PaymentsAndIntegrationsPage(): React.ReactElement {
     </div>
   );
 }
+

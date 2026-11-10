@@ -51,3 +51,4 @@ export default function ReservationsPage(): React.ReactElement {
     </div>
   );
 }
+

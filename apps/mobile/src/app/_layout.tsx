@@ -1,4 +1,5 @@
 import React from 'react';
+import '../global.css';
 import { THEME_COLORS } from '@proffkit/shared-ui';
 
 export default function RootAppLayout({
@@ -19,3 +20,4 @@ export default function RootAppLayout({
     </div>
   );
 }
+

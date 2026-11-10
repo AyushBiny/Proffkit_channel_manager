@@ -66,3 +66,4 @@ export default function DirectBookingPage(): React.ReactElement {
     </div>
   );
 }
+
