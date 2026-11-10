@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7-alpine
+    restart: always
+    command: redis-server --appendonly yes --maxmemory-policy noeviction
+    volumes:
+      - ./data/redis:/data
+
+  sync-worker:
+    build:
+      context: ../..
+      dockerfile: apps/cloud-worker/Dockerfile
+    restart: always
+    ipc: host
+    env_file: ../../.env
+    depends_on:
+      - redis
+    volumes:
+      - ./data/sessions:/data/sessions
