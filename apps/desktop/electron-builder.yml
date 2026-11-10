@@ -1,33 +1,20 @@
 appId: com.proffkit.reception
-productName: Proffkit Reception PC
-copyright: Copyright © 2026 Proffkit Hospitality
-
+productName: Proffkit Reception Desk
 directories:
-  output: dist
   buildResources: build
-
+  output: dist
 files:
-  - "out/**/*"
-  - "!**/*.map"
-
-# Optimization: Strip unused Chromium locales to save ~35 MB in bundle size
+  - "!**/.vscode/*"
+  - "!src/*"
+  - "!electron.vite.config.{js,ts,mjs,cjs}"
 electronLanguages:
   - en-US
-  - en
-
+compression: maximum
 win:
   target:
     - target: nsis
       arch:
         - x64
-  icon: build/icon.ico
-
-nsis:
-  oneClick: false
-  perMachine: true
-  allowToChangeInstallationDirectory: true
-  createDesktopShortcut: always
-  deleteAppDataOnUninstall: false
-
-compression: maximum
-asar: true
+mac:
+  target:
+    - dmg

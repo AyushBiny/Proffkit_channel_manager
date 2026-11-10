@@ -1,5 +1,4 @@
 import React from 'react';
-import './globals.css';
 
 export const metadata = {
   title: 'Proffkit Hospitality Guest Portal',
