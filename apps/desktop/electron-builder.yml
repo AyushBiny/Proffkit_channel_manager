@@ -1,0 +1,33 @@
+appId: com.proffkit.reception
+productName: Proffkit Reception PC
+copyright: Copyright © 2026 Proffkit Hospitality
+
+directories:
+  output: dist
+  buildResources: build
+
+files:
+  - "out/**/*"
+  - "!**/*.map"
+
+# Optimization: Strip unused Chromium locales to save ~35 MB in bundle size
+electronLanguages:
+  - en-US
+  - en
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.ico
+
+nsis:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  deleteAppDataOnUninstall: false
+
+compression: maximum
+asar: true
